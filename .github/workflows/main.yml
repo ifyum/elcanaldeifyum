@@ -1,0 +1,11 @@
+name: Docker Image CI
+
+on: [push]
+build:
+
+runs-on: ubuntu-latest
+env:
+steps:
+- uses: actions/checkout@v1
+- name: Build the docker-compose stack
+run: docker-compose -f docker/wordpres.yml up -d
